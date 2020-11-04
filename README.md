@@ -53,8 +53,8 @@ out:
    }
 ]
 ```
-## help
-for help do
+## Documentation
+For documentation do:
 ```py
 from aioradios import RadioBrowser
 help(RadioBrowser())
