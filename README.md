@@ -53,14 +53,16 @@ out:
    }
 ]
 ```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
 ## Documentation
 For documentation do:
 ```py
 from aioradios import RadioBrowser
 help(RadioBrowser())
 ```
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)

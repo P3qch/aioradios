@@ -294,6 +294,42 @@ class RadioBrowser:
         else:
             return await self.http.request("tags/", params=params)
 
+    async def stations(self, orderby: str = 'name', reverse: bool = False, offset=0, limit = 100000) -> List[dict]:
+        """
+        Get a full list of all stations.
+
+        Parameters
+        ----------
+        orderby : str, optional
+            Name of the attribute the result list will be sorted by. (Default is 'name')
+        reverse : bool, optional
+            reverse the result list if set to true (Default is False)
+        offset : int, optional 
+            Starting value of the result list from the database. For example, if you want to do paging on the server side. (default: 0)
+        limit : int, optional
+            Number of returned datarows (stations) starting with offset (default 100000)
+
+        Raises
+        ------
+        NotInitialized
+            If not initialized
+        """
+        if not self.__intialized:
+            raise NotInitialized("Please initialize the RadioBrowser.")
+
+        reverse = str(reverse).lower()
+
+
+        params = {
+            'order': orderby,
+            'reverse': reverse,
+            'offset': offset,
+            'limit': limit
+        }
+
+
+        return await self.http.request("stations/", params=params) 
+
 
     async def search(self, **kwargs) -> List[dict]:
         """
