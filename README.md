@@ -20,7 +20,7 @@ async def main():
     rb = RadioBrowser()
     await rb.init()
 
-    radio = rb.search(name='UpBeatRadio', limit=1)
+    radio = await rb.search(name='UpBeatRadio', limit=1)
 ```
 out:
 ```json

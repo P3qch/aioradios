@@ -406,7 +406,7 @@ class RadioBrowser:
             if isinstance(value, bool):
                 di[key] = str(value).lower() 
 
-        return await self.http.request('stations/search', params = )
+        return await self.http.request('stations/search', params = di)
 
     async def search_by_uuid(self, uuids):
         """
