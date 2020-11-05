@@ -42,7 +42,7 @@ class HTTP:
         :endpoint: - the endpoint to request
         :fmt: - The return format. Can be JSON and XML
         """
-        print(self.route)
+ 
         POSSIBLE_FORMATS = ('xml', 'json')
 
         if self.fmt.lower() not in POSSIBLE_FORMATS:
@@ -50,7 +50,7 @@ class HTTP:
 
         headers = {"content-type": f"application/{self.fmt}", "User-Agent": "aioradios/dev"}
 
-        async with self.session.get(f"{self.route}/{self.fmt}/{endpoint}", params=params) as resp:
+        async with self.session.get(f"{self.route}/{self.fmt}/{endpoint}", params=params, headers = headers) as resp:
             if self.fmt.lower() == 'json':
                 return await resp.json()
             elif self.fmt.lower() == 'xml':

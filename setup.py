@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="aioradios", 
-    version="0.2.2",
+    version="0.2.3",
     author="Peach",
     author_email="ariechertkov@gmail.com",
     description="An asynchronous API wrapper for www.radio-browser.info",
