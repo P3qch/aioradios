@@ -401,8 +401,12 @@ class RadioBrowser:
         """
         if not self.__intialized:
             raise NotInitialized("Please initialize the RadioBrowser.")
+        di = dict(kwargs)
+        for key, value in di.items():
+            if isinstance(value, bool):
+                di[key] = str(value).lower() 
 
-        return await self.http.request('stations/search', params = dict(kwargs))
+        return await self.http.request('stations/search', params = )
 
     async def search_by_uuid(self, uuids):
         """
