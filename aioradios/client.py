@@ -408,6 +408,25 @@ class RadioBrowser:
 
         return await self.http.request('stations/search', params = di)
 
+    async def search_by_url(self, url):
+        """
+        A list of radio stations that have an exact URL match.
+
+        Parameters
+        ----------
+        url : str
+            URL of station
+
+        Raises
+        ------
+        NotInitialized
+            If not initialized
+        """
+        if not self.__intialized:
+            raise NotInitialized("Please initialize the RadioBrowser.")
+
+        return await self.http.request('stations/byurl', params={'url':url})
+
     async def search_by_uuid(self, uuids):
         """
         A list of radio stations that have an exact UUID match.
